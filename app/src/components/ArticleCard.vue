@@ -1,0 +1,15 @@
+<template>
+   <div class="flex max-w-2xl mx-auto bg-white rounded-sm shadow-md">
+      <div>
+         <img src="https://picsum.photos/600/300" class="h-full w-full object-cover" alt="code block">
+      </div>
+
+      <div class="p-8">
+         <div class="uppercase tracking-wide text-sm text-violet-500 font-medium">Vue</div>
+         <a href="#" class="mt-1 text-lg tracking-tight font-medium text-black hover:underline">Building Vue 3 Components with Tailwind CSS</a>
+         <p class="mt-2 text-sm text-slate-500">
+            Learn how to create visually stunning Vue components using the popular utility-first CSS framework Tailwind.
+         </p>
+      </div>
+   </div>
+</template>

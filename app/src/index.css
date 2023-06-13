@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); 
+/* TODO: ref local font files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   background-color: #ddd;
+   font-family: Poppins;
+}
