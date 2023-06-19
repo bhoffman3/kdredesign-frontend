@@ -1,124 +1,127 @@
 <script setup lang="ts">
+import { ref, onMounted, reactive, computed } from 'vue'
+import { uuid } from 'vue-uuid'
+
+import KDSquare from '../models/KDSquare'
+import NewBounds from '../models/NewBounds'
+import SquareList from './SquareList.vue'
+
 const props = defineProps({
-   numSquaresFloor: Number,
-   numSquaresCeiling: Number,
-   squareSizeFloor: Number,
-   squareSizeCeiling: Number,
+	numSquaresFloor: Number,
+	numSquaresCeiling: Number,
+	squareSizeFloor: Number,
+	squareSizeCeiling: Number,
+	squarePadding: Number,
+})
+
+// core functions
+function generateSquares(numFloor: any, numCeiling: any, container: any) {
+	let count = Math.floor(Math.random() * (numCeiling - numFloor + 1)) + numFloor
+
+	let squares = []
+	for (let i = 0; i < count; i++) {
+		let size = getRandomSize()
+		squares.push(
+			new KDSquare(
+				size,
+				getRandomColor(),
+				new NewBounds(size, props.squarePadding),
+			),
+		)
+	}
+	return randomizePos(squares, container)
+}
+
+function randomizePos(squares: KDSquare[], areaToFit: any) {
+	let containerRect = areaToFit.getBoundingClientRect()
+	const triesPerSquare = 50
+	const placing = squares
+	const placed: KDSquare[] = []
+	let maxTries = triesPerSquare * squares.length
+
+	while (placing.length && maxTries > 0) {
+		let i = 0
+		while (i < placing.length) {
+			let square = placing[i]
+			square.newBounds.moveTo(
+				getRandomUint(containerRect.width - square.newBounds.width),
+				getRandomUint(containerRect.height - square.newBounds.height),
+			)
+			if (
+				placed.every((placed) => !placed.newBounds.overlaps(square.newBounds))
+			) {
+				square.styles.visibility = 'visible'
+				square.styles.position = 'absolute'
+				square.styles.left = `${square.newBounds.l}px`
+				square.styles.top = `${square.newBounds.t}px`
+				placed.push(placing.splice(i--, 1)[0])
+			} else {
+				maxTries--
+			}
+
+			i++
+		}
+	}
+
+	console.log(placed)
+	return placed
+}
+
+function getRandomColor() {
+	let colors = Array(
+		/*"#e56a54",*/
+		/*'#384967'*/
+		'#fdd086',
+		'#75787b',
+		'#c6d6e3',
+	) // TODO: need a way to exclude the color of the bg of the components
+	return colors[Math.floor(Math.random() * colors.length)]
+}
+
+function getRandomSize() {
+	let sizeFloor = 15
+	let sizeCeiling = 100
+
+	let size = Math.floor(Math.random() * (sizeCeiling - sizeFloor) + sizeFloor)
+	return size
+}
+
+function getRandomUint(range: number): number {
+	return (Math.random() * range) | 0
+}
+
+// runtime
+let instanceID = uuid.v4()
+const splashContainer = ref()
+
+let squares: any = ref(null)
+
+onMounted(() => {
+	squares.value = generateSquares(
+		props.numSquaresFloor,
+		props.numSquaresCeiling,
+		splashContainer.value,
+	)
 })
 </script>
 
 <style lang="scss">
 .kd-square-splash {
-
-   .kd-square {
-      border-radius: 10%;
-      background-color: white;
-   }
+	.kd-square {
+		border-radius: 10%;
+		background-color: white;
+	}
 }
 </style>
 
 <template>
-   <div class="kd-square-splash w-full h-full absolute top-0 right-0 z-50">
-      <div class="inner">
-         <div class="target"></div>
-      </div>
-   </div>
+	<div
+		class="kd-square-splash w-full h-full absolute top-0 right-0 z-50"
+		:id="instanceID"
+		ref="splashContainer"
+	>
+		<div class="inner w-full h-full relative">
+			<SquareList v-if="squares != null" :squares="squares" />
+		</div>
+	</div>
 </template>
-
-<script lang="ts">
-class KDSquare {
-   size: any;
-   color: any;
-   bounds: any;
-
-   constructor(size: any, color: any, bounds: any) {
-      this.size = size;
-      this.color = color;
-      this.bounds = bounds;
-   }
-}
-
-function generateSquares(numFloor: any, numCeiling: any) {
-   var count =
-    Math.floor(Math.random() * (numCeiling - numFloor + 1)) + numFloor;
-
-  var squares = [];
-  for (var i = 0; i < count; i++) {
-    squares.push(new KDSquare(getRandomSize(), getRandomColor(), Bounds()));
-  }
-
-  return squares;
-}
-function placeSquares(target: any, squares: any) {
-
-}
-
-function randomizePos(target: any) {
-
-}
-
-// helper functions
-
-function Bounds(el?: any, pad = 0) { // this is like a class -- TODO: turn into actual class?
-   const square = el?.getBoundingClientRect() ?? {
-      left: 0,
-      top: 0,
-      right: innerWidth,
-      bottom: innerHeight,
-      width: innerWidth,
-      height: innerHeight
-   };
-
-   return {
-      l: square.left - pad,
-      t: square.top - pad,
-      r: square.right + pad,
-      b: square.bottom + pad,
-
-      w: square.width + pad * 2,
-      h: square.height + pad * 2,
-      overlaps(bounds: any) {
-         return !(
-            this.l > bounds.r ||
-            this.r < bounds.l ||
-            this.t > bounds.b ||
-            this.b < bounds.t
-         );
-      },
-      moveTo(x: any, y: any) {
-         this.r = (this.l = x) + this.w;
-         this.b = (this.t = y) + this.h;
-         return this;
-      },
-      placeElement() {
-         if (el) {
-            el.style.top = this.t + pad + "px";
-            el.style.left = this.l + pad + "px";
-            el.style.visibility = "visible";
-            el.classList.add("placed");
-         }
-         return this;
-      }
-   };
-}
-
-function getDistance(x1: any, y1: any, x2: any, y2: any) {
-   let xDistance = x2 - x1;
-   let yDistance = y2 - y1;
-
-   return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-}
-
-function getRandomColor() {
-  var colors = Array("orange", "yellow", "gray", "light-blue");
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function getRandomSize() {
-  var sizeFloor = 15;
-  var sizeCeiling = 100;
-
-  var size = Math.floor(Math.random() * (sizeCeiling - sizeFloor) + sizeFloor);
-  return size;
-}
-</script>

@@ -7,6 +7,7 @@ import KDLogoSmall from './KDLogoSmall.vue';
    <header class="relative w-full">
       <div class="bg-white w-full h-full absolute opacity-90"></div> <!-- desktop header bg -->
 
+      <!-- desktop nav -->
       <nav class="relative px-4 py-2 flex justify-between items-center"> <!-- desktop nav -->
          <a href="#" class="hidden text-3xl font-bold leading-none w-[175px] lg:block">
             <KDLogo />
@@ -48,12 +49,14 @@ import KDLogoSmall from './KDLogoSmall.vue';
             class="hidden lg:inline-block py-2 px-6 bg-navy text-sm text-white font-bold rounded-xl transition duration-200">Contact
             Us</a>
       </nav>
+      <!-- /desktop nav -->
 
-      <div class="navbar-menu relative z-50 hidden"> <!-- mobile nav -->
+      <!-- mobile nav -->
+      <div class="navbar-menu relative z-50 hidden">
          <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-         <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+         <nav class="fixed top-0 left-0 bottom-0 w-full flex flex-col pt-2 pb-6 px-6 bg-white border-r overflow-y-auto">
             <div class="flex items-center mb-8">
-               <a href="#" class="mr-auto text-3xl font-bold leading-none w-[175px]">
+               <a href="/" class="mr-auto text-3xl font-bold leading-none w-[175px]">
                   <KDLogo />
                </a>
                <button class="navbar-close">
@@ -67,32 +70,27 @@ import KDLogoSmall from './KDLogoSmall.vue';
             <div>
                <ul>
                   <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
-                        Home
-                     </a>
-                  </li>
-                  <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
+                     <a href="" class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded">
                         Our Experience
                      </a>
                   </li>
                   <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
+                     <a href="" class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded">
                         Your Business
                      </a>
                   </li>
                   <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
+                     <a href="" class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded">
                         What We Offer
                      </a>
                   </li>
                   <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
+                     <a href="" class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded">
                         Inspiration
                      </a>
                   </li>
                   <li class="mb-1">
-                     <a href="" class="block p-4 text-sm font-semibold text-navy hover:text-gray-500 rounded">
+                     <a href="" class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded">
                         About
                      </a>
                   </li>
@@ -102,15 +100,41 @@ import KDLogoSmall from './KDLogoSmall.vue';
             <div class="mt-auto">
                <div class="pt-6">
                   <a href="#"
-                     class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-navy rounded-xl">Contact
+                     class="block py-1.5 mb-4 leading-loose text-lg tracking-wider text-center text-white bg-navy rounded-xl">Contact
                      us</a>
-                  <p class="my-4 text-xs text-center text-gray-400">
-                     <span>Copyright © 2023</span>
-                  </p>
+
+                     <div class="socials">
+                        <ul class="flex justify-center gap-5">
+                           <li class="bg-orange p-2 rounded-lg">
+                              <a href="#">
+                                 <font-awesome-icon icon="fa-brands fa-twitter" size="2x" class="text-white" />
+                              </a>
+                           </li>
+
+                           <li class="bg-orange p-2 rounded-lg">
+                              <a href="#" class="w-[25px]">
+                                 <font-awesome-icon icon="fa-brands fa-facebook" size="2x" class="text-white" />
+                              </a>
+                           </li>
+
+                           <li class="bg-orange p-2 rounded-lg">
+                              <a href="#" class="w-[25px]">
+                                 <font-awesome-icon icon="fa-brands fa-instagram" size="2x" class="text-white" />
+                              </a>
+                           </li>
+
+                           <li class="bg-orange p-2 rounded-lg">
+                              <a href="#" class="w-[25px]">
+                                 <font-awesome-icon icon="fa-brands fa-linkedin" size="2x" class="text-white" />
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
                </div>
             </div>
          </nav>
       </div>
+      <!-- /mobile nav -->
 
    </header>
 </template>
