@@ -58,18 +58,19 @@ const props = defineProps({
 
 				<!-- content -->
 				<div
-					class="content absolute w-full md:w-[45%] h-full pb-8 md:pb-0 flex justify-center items-end md:items-center z-50"
+					class="content absolute w-full md:w-[45%] h-full pb-8 md:pb-0 flex justify-center items-end md:items-center"
 				>
 					<div class="flex flex-col flex-wrap justify-center items-center">
 						<h1 class="text-4xl lg:text-5xl tracking-wider text-white mb-6">
 							{{ title }}
 						</h1>
 						<div class="bg-white rounded w-full h-[3px] mb-6"></div>
-						<div
+						<a
+							href="#"
 							class="text-white text-xl px-4 py-2 border-4 border-yellow rounded"
 						>
-							TODO: CTA Link
-						</div>
+							Click Here
+						</a>
 					</div>
 				</div>
 				<!-- /content -->
