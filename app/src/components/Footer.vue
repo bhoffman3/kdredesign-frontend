@@ -6,18 +6,30 @@ import KDSquareSplash from './KDSquareSplash.vue'
 <template>
 	<footer class="mt-5">
 		<div class="relative container-fluid flex flex-wrap px-8 py-24 bg-navy">
-			<div class="w-full md:w-[60%]">
-				<div class="w-[400px] mb-3">
+			<div class="w-full lg:w-[60%]">
+				<div class="w-full md:w-[30em] mb-3 mx-auto lg:mx-0">
 					<KDLogoLongFooter />
 				</div>
-				<nav class="flex justify-start gap-5">
-					<a href="#" class="uppercase text-white text-xl">Subscribe</a>
-					<a href="#" class="uppercase text-white text-xl">Contact</a>
-					<a href="#" class="uppercase text-white text-xl">Privacy Policy</a>
+				<nav class="flex justify-center lg:justify-start gap-5">
+					<a
+						href="#"
+						class="uppercase text-white text-center text-lg lg:text-xl"
+						>Subscribe</a
+					>
+					<a
+						href="#"
+						class="uppercase text-white text-center text-lg lg:text-xl"
+						>Contact</a
+					>
+					<a
+						href="#"
+						class="uppercase text-white text-center text-lg lg:text-xl"
+						>Privacy Policy</a
+					>
 				</nav>
 			</div>
 
-			<div class="w-full md:w-[40%]">
+			<div class="w-full lg:w-[40%] mt-8 lg:mt-0">
 				<div class="socials">
 					<ul class="flex justify-center gap-5">
 						<li class="bg-sky p-2 rounded-lg">
