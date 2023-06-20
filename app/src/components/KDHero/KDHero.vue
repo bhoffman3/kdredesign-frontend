@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
+import KDButton from '../Buttons/KDButton.vue'
 
 const props = defineProps({
 	color: String,
@@ -70,12 +71,7 @@ const props = defineProps({
 							{{ title }}
 						</h1>
 						<div class="bg-white rounded w-full h-[3px] mb-6"></div>
-						<a
-							href="#"
-							class="text-white text-lg md:text-xl px-4 py-2 border-4 border-yellow rounded"
-						>
-							Click Here
-						</a>
+						<KDButton text="Click here" url="#" />
 					</div>
 				</div>
 				<!-- /content -->

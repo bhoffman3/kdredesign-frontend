@@ -2,6 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import KDHero from '@/components/KDHero/KDHero.vue'
 import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
+import KDCard from '@/components/KDCards/KDCard.vue'
+import KDCardListing from '@/components/KDCards/KDCardListing.vue'
 </script>
 
 <template>
@@ -37,5 +39,34 @@ import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 			ctaText="Click here"
 			ctaLink="#"
 		/>
+
+		<KDCardListing>
+			<KDCard
+				img="https://picsum.photos/seed/kdcardimage/800"
+				title="Lorem Ipsum"
+				subtitle="Lorem Ipsum"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi tempus imperdiet nulla malesuada pellentesque. Libero id faucibus nisl tincidunt eget nullam non nisi."
+				linkText="Click here"
+				linkUrl="#"
+			/>
+
+			<KDCard
+				img="https://picsum.photos/seed/kdcardimag/800"
+				title="Lorem Ipsum"
+				subtitle="Lorem Ipsum"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi tempus imperdiet nulla malesuada pellentesque. Libero id faucibus nisl tincidunt eget nullam non nisi."
+				linkText="Click here"
+				linkUrl="#"
+			/>
+
+			<KDCard
+				img="https://picsum.photos/seed/kdcardima/800"
+				title="Lorem Ipsum"
+				subtitle="Lorem Ipsum"
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi tempus imperdiet nulla malesuada pellentesque. Libero id faucibus nisl tincidunt eget nullam non nisi."
+				linkText="Click here"
+				linkUrl="#"
+			/>
+		</KDCardListing>
 	</BaseLayout>
 </template>
