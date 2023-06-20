@@ -14,7 +14,7 @@ import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 
 		<KDSideBySide
 			contentSide="right"
-			color="bg-navy"
+			color="navy"
 			img="https://picsum.photos/seed/thesquishyman/1920/1080"
 			title="Lorem Ipsum"
 			subtitle="Lorem Ipsum"
@@ -27,7 +27,7 @@ import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 
 		<KDSideBySide
 			contentSide="left"
-			color="bg-orange"
+			color="orange"
 			img="https://picsum.photos/seed/thesquishyguy/1920/1080"
 			title="Lorem Ipsum"
 			subtitle="Lorem Ipsum"
