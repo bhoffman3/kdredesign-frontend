@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import KDSquareSplash from './KDSquareSplash.vue'
+import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
 
 const props = defineProps({
 	color: String,

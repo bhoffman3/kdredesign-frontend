@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import KDLogoLongFooter from './Logos/KDLogoLongFooter.vue'
-import KDSquareSplash from './KDSquareSplash.vue'
+import KDLogoLongFooter from '../Logos/KDLogoLongFooter.vue'
+import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
 </script>
 
 <template>

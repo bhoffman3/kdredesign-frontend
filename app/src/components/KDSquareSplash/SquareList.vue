@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import KDSquare from '../models/KDSquare'
+import KDSquare from '../../models/KDSquare'
 import PropType from 'vue'
 
 const props = defineProps({
