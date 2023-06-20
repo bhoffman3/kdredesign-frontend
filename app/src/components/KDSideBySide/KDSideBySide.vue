@@ -50,6 +50,7 @@ const props = defineProps({
 				</p>
 				<DefaultButton
 					v-if="ctaText != ''"
+					size="small"
 					:color="color == 'navy' ? 'yellow' : color == 'orange' ? 'navy' : ''"
 					:text="ctaText"
 					:url="ctaLink"

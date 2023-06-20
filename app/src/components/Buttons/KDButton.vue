@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const props = defineProps({
+	size: String,
 	color: String,
 	text: String,
 	url: String,
@@ -28,17 +29,17 @@ const props = defineProps({
 
 	::before {
 		height: 65%;
-		width: 7px;
+		width: 6px;
 		left: 6px;
-		bottom: 8%;
+		top: 5%;
 		border-radius: 7px;
 	}
 
 	::after {
-		height: 8px;
-		width: 8px;
+		height: 7px;
+		width: 6px;
 		border-radius: 50%;
-		bottom: 80%;
+		bottom: 8%;
 		left: 6px;
 	}
 
@@ -64,7 +65,14 @@ const props = defineProps({
 	<a
 		:href="url"
 		:target="newTab ? '_blank' : ''"
-		class="kd-btn bg-yellow hover:shadow-lg px-10 py-5 rounded border-yellowLighten border-4 border-b-yellowDarken border-r-yellowDarken"
+		class="kd-btn bg-yellow hover:shadow-lg rounded border-yellowLighten border-4 border-b-yellowDarken border-r-yellowDarken"
+		:class="
+			size == 'base'
+				? 'px-5 py-2'
+				: size == 'large'
+				? 'px-10 py-5'
+				: 'px-5 py-2'
+		"
 	>
 		<div
 			class="kd-btn__in text-lg text-navy hover:text-navyDarken font-semibold"
