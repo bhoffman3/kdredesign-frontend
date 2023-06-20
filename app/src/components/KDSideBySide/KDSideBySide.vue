@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DefaultButton from '../Buttons/KDButton.vue'
 const props = defineProps({
 	contentSide: String,
 	color: String,
@@ -13,7 +14,16 @@ const props = defineProps({
 
 <template>
 	<section class="kd-side-by-side container mx-auto my-8">
-		<div class="flex flex-wrap overflow-hidden p-2" :class="color">
+		<div
+			class="flex flex-wrap overflow-hidden p-2"
+			:class="
+				color == 'navy'
+					? 'bg-navy'
+					: color == 'orange'
+					? 'bg-orange'
+					: 'bg-navy'
+			"
+		>
 			<div
 				class="kd-side-by-side__img w-full md:w-1/2 h-[15em] md:h-auto relative"
 				:class="contentSide == 'right' ? 'order-1' : 'order-2'"
@@ -38,12 +48,14 @@ const props = defineProps({
 				<p class="text-white text-base lg:text-lg mb-4">
 					{{ text }}
 				</p>
-				<a
+				<DefaultButton
 					v-if="ctaText != ''"
-					:href="ctaLink"
-					class="inline-block text-white text-base lg:text-lg uppercase px-4 py-2 border-4 border-yellow rounded"
-					>{{ ctaText }}</a
-				>
+					size="small"
+					:color="color == 'navy' ? 'yellow' : color == 'orange' ? 'navy' : ''"
+					:text="ctaText"
+					:url="ctaLink"
+					:newTab="false"
+				/>
 			</div>
 		</div>
 	</section>
