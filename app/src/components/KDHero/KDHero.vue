@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
 import KDButton from '../Buttons/KDButton.vue'
-
+import ComponentTitle from '../Typography/ComponentTitle.vue'
 const props = defineProps({
 	color: String,
 	img: String,
@@ -67,9 +67,7 @@ const props = defineProps({
 					class="content absolute w-full md:w-[45%] h-full pb-8 md:pb-0 flex justify-center items-end md:items-center"
 				>
 					<div class="flex flex-col flex-wrap justify-center items-center">
-						<h1 class="text-3xl lg:text-5xl tracking-wider text-white mb-6">
-							{{ title }}
-						</h1>
+						<ComponentTitle :text="title" :color="'text-white'" />
 						<div class="bg-white rounded w-full h-[3px] mb-6"></div>
 						<KDButton text="Click here" url="#" />
 					</div>

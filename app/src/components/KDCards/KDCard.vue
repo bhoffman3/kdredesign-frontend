@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import KDButton from '../Buttons/KDButton.vue'
+import ComponentTitle from '../Typography/ComponentTitle.vue'
+import ComponentSubtitle from '../Typography/ComponentSubtitle.vue'
+import ComponentText from '../Typography/ComponentText.vue'
 const props = defineProps({
 	img: String,
 	title: String,
@@ -21,9 +24,10 @@ const props = defineProps({
 		</div>
 
 		<div class="kd-card__content w-full h-1/2 px-8 py-4 relative">
-			<div class="text-white uppercase text-4xl">{{ title }}</div>
-			<div class="text-white uppercase text-xl">{{ subtitle }}</div>
-			<p class="text-white my-4">{{ text }}</p>
+			<ComponentTitle :text="title" :color="'text-white'" />
+			<ComponentSubtitle :text="subtitle" :color="'text-white'" />
+			<ComponentText :text="text" :color="'text-white'" />
+
 			<KDButton v-if="linkText != ''" :text="linkText" :url="linkUrl" />
 		</div>
 	</div>
