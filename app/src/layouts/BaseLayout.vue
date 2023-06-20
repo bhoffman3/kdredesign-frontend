@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+import Header from '../components/Global/Header.vue'
+import Footer from '../components/Global/Footer.vue'
 </script>
 
 <template>
-   <Header />
+	<Header />
 
-   <main>
-      <slot></slot>
-   </main>
+	<main>
+		<slot></slot>
+	</main>
 
-   <Footer />
+	<Footer />
 </template>

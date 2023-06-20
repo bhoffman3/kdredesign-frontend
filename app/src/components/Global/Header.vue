@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import KDLogo from './Logos/KDLogo.vue'
-import KDLogoSmall from './Logos/KDLogoSmall.vue'
+import KDLogo from '../Logos/KDLogo.vue'
+import KDLogoSmall from '../Logos/KDLogoSmall.vue'
 </script>
 
 <template>
@@ -116,7 +116,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 						<li class="mb-1">
 							<a
 								href=""
-								class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded"
+								class="block p-4 text-xl font-semibold text-navy hover:text-gray-500 rounded"
 							>
 								Our Experience
 							</a>
@@ -124,7 +124,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 						<li class="mb-1">
 							<a
 								href=""
-								class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded"
+								class="block p-4 text-xl font-semibold text-navy hover:text-gray-500 rounded"
 							>
 								Your Business
 							</a>
@@ -132,7 +132,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 						<li class="mb-1">
 							<a
 								href=""
-								class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded"
+								class="block p-4 text-xl font-semibold text-navy hover:text-gray-500 rounded"
 							>
 								What We Offer
 							</a>
@@ -140,7 +140,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 						<li class="mb-1">
 							<a
 								href=""
-								class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded"
+								class="block p-4 text-xl font-semibold text-navy hover:text-gray-500 rounded"
 							>
 								Inspiration
 							</a>
@@ -148,7 +148,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 						<li class="mb-1">
 							<a
 								href=""
-								class="block p-4 text-base font-semibold text-navy hover:text-gray-500 rounded"
+								class="block p-4 text-xl font-semibold text-navy hover:text-gray-500 rounded"
 							>
 								About
 							</a>
@@ -160,7 +160,7 @@ import KDLogoSmall from './Logos/KDLogoSmall.vue'
 					<div class="pt-6">
 						<a
 							href="#"
-							class="block py-1.5 mb-4 leading-loose text-lg tracking-wider text-center text-white bg-navy rounded-xl"
+							class="block py-1.5 mb-4 leading-loose text-xl tracking-wider text-center text-white bg-navy rounded-xl"
 							>Contact us</a
 						>
 

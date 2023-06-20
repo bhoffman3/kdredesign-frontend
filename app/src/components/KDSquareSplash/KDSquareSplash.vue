@@ -2,8 +2,8 @@
 import { ref, onMounted, reactive, computed } from 'vue'
 import { uuid } from 'vue-uuid'
 
-import KDSquare from '../models/KDSquare'
-import NewBounds from '../models/NewBounds'
+import KDSquare from '../../models/KDSquare'
+import NewBounds from '../../models/NewBounds'
 import SquareList from './SquareList.vue'
 
 const props = defineProps({

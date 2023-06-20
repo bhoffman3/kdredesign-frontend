@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BaseLayout from '@/layouts/BaseLayout.vue'
-import KDHero from '@/components/KDHero.vue'
-import KDSideBySide from '@/components/KDSideBySide.vue'
+import KDHero from '@/components/KDHero/KDHero.vue'
+import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 </script>
 
 <template>
