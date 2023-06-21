@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import DefaultButton from '../Buttons/KDButton.vue'
+import KDButton from '../Buttons/KDButton.vue'
+import ComponentTitle from '../Typography/ComponentTitle.vue'
+import ComponentSubtitle from '../Typography/ComponentSubtitle.vue'
+import ComponentText from '../Typography/ComponentText.vue'
 const props = defineProps({
 	contentSide: String,
 	color: String,
@@ -13,7 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<section class="kd-side-by-side container mx-auto my-8">
+	<section class="kd-side-by-side container mx-auto my-8 px-4 lg:px-0">
 		<div
 			class="flex flex-wrap overflow-hidden p-2"
 			:class="
@@ -39,16 +42,11 @@ const props = defineProps({
 				class="kd-side-by-side__content w-full md:w-1/2 h-auto px-6 py-8 xl:px-24 xl:py-36"
 				:class="contentSide == 'right' ? 'order-2' : 'order-1'"
 			>
-				<div class="text-white text-4xl lg:text-6xl uppercase mb-1">
-					{{ title }}
-				</div>
-				<div class="text-white text-lg lg:text-2xl uppercase mb-4">
-					{{ subtitle }}
-				</div>
-				<p class="text-white text-base lg:text-lg mb-4">
-					{{ text }}
-				</p>
-				<DefaultButton
+				<ComponentTitle :text="title" :color="'text-white'" />
+				<ComponentSubtitle :text="subtitle" :color="'text-white'" />
+				<ComponentText :text="text" :color="'text-white'" />
+
+				<KDButton
 					v-if="ctaText != ''"
 					size="small"
 					:color="color == 'navy' ? 'yellow' : color == 'orange' ? 'navy' : ''"
