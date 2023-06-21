@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DefaultButton from '../Buttons/KDButton.vue'
+import KDButton from '../Buttons/KDButton.vue'
 import ComponentTitle from '../Typography/ComponentTitle.vue'
 import ComponentSubtitle from '../Typography/ComponentSubtitle.vue'
 import ComponentText from '../Typography/ComponentText.vue'
@@ -46,7 +46,7 @@ const props = defineProps({
 				<ComponentSubtitle :text="subtitle" :color="'text-white'" />
 				<ComponentText :text="text" :color="'text-white'" />
 
-				<DefaultButton
+				<KDButton
 					v-if="ctaText != ''"
 					size="small"
 					:color="color == 'navy' ? 'yellow' : color == 'orange' ? 'navy' : ''"

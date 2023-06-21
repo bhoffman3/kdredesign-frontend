@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="kd-card relative bg-navy rounded-lg shadow-lg overflow-hidden">
+	<div class="kd-card relative bg-yellow rounded-lg shadow-lg overflow-hidden">
 		<div class="kd-card__img w-full h-[250px] p-2 pb-0">
 			<img
 				:src="img"
@@ -24,11 +24,16 @@ const props = defineProps({
 		</div>
 
 		<div class="kd-card__content w-full h-1/2 px-8 py-4 relative">
-			<ComponentTitle :text="title" :color="'text-white'" />
-			<ComponentSubtitle :text="subtitle" :color="'text-white'" />
-			<ComponentText :text="text" :color="'text-white'" />
+			<ComponentTitle :text="title" :color="'text-navy'" />
+			<ComponentSubtitle :text="subtitle" :color="'text-navy'" />
+			<ComponentText :text="text" :color="'text-navy'" />
 
-			<KDButton v-if="linkText != ''" :text="linkText" :url="linkUrl" />
+			<KDButton
+				v-if="linkText != ''"
+				:text="linkText"
+				:url="linkUrl"
+				:color="'navy'"
+			/>
 		</div>
 	</div>
 </template>

@@ -16,6 +16,8 @@ module.exports = {
         yellowLighten: '#fee1b4',
         yellow: '#fdd086',
         yellowDarken: '#fdc468',
+        gray: '#75787b',
+        lightGray: '#e5e1e6',
       },
     },
   },

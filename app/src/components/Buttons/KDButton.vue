@@ -65,17 +65,29 @@ const props = defineProps({
 	<a
 		:href="url"
 		:target="newTab ? '_blank' : ''"
-		class="kd-btn bg-yellow hover:shadow-lg rounded border-yellowLighten border-4 border-b-yellowDarken border-r-yellowDarken"
-		:class="
+		class="kd-btn hover:shadow-lg rounded border-4"
+		:class="[
+			color == 'yellow'
+				? 'bg-yellow border-yellowLighten border-b-yellowDarken border-r-yellowDarken'
+				: color == 'navy'
+				? 'bg-navy border-navyLighten border-b-navyDarken border-r-navyDarken'
+				: 'bg-yellow border-yellowLighten border-b-yellowDarken border-r-yellowDarken',
 			size == 'base'
 				? 'px-5 py-2'
 				: size == 'large'
 				? 'px-10 py-5'
-				: 'px-5 py-2'
-		"
+				: 'px-5 py-2',
+		]"
 	>
 		<div
-			class="kd-btn__in text-lg text-navy hover:text-navyDarken font-semibold"
+			class="kd-btn__in text-lg font-semibold"
+			:class="
+				color == 'yellow'
+					? 'text-navy hover:text-navyDarken'
+					: color == 'navy'
+					? 'text-white'
+					: 'text-navy hover:text-navyDarken'
+			"
 		>
 			{{ text }}
 		</div>
