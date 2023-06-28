@@ -4,6 +4,7 @@ import KDHero from '@/components/KDHero/KDHero.vue'
 import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 import KDCard from '@/components/KDCards/KDCard.vue'
 import KDCardListing from '@/components/KDCards/KDCardListing.vue'
+import KDSquareSplashV2 from '@/components/KDSquareSplashV2/KDSquareSplashV2.vue'
 </script>
 
 <template>
@@ -68,5 +69,9 @@ import KDCardListing from '@/components/KDCards/KDCardListing.vue'
 				linkUrl="#"
 			/>
 		</KDCardListing>
+
+		<div class="container mx-auto h-80 bg-navy">
+			<KDSquareSplashV2 componentBackgroundColor="navy" />
+		</div>
 	</BaseLayout>
 </template>

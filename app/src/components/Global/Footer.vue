@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import KDLogoLongFooter from '../Logos/KDLogoLongFooter.vue'
-import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
+import KDSquareSplashV2 from '../KDSquareSplashV2/KDSquareSplashV2.vue'
 </script>
 
 <template>
 	<footer class="mt-5">
+		<KDSquareSplashV2 componentBackgroundColor="navy" />
+
 		<div class="relative container-fluid flex flex-wrap px-8 py-24 bg-navy">
 			<div class="w-full lg:w-[60%]">
 				<div class="w-full md:w-[30em] mb-3 mx-auto lg:mx-0">
