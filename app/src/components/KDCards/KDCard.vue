@@ -14,26 +14,30 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="kd-card relative bg-yellow rounded-lg shadow-lg overflow-hidden">
-		<div class="kd-card__img w-full h-[250px] p-2 pb-0">
-			<img
-				:src="img"
-				alt="card img"
-				class="w-full h-full object-cover object-center rounded"
-			/>
-		</div>
+	<div class="kd-card relative bg-yellow shadow-lg overflow-hidden">
+		<div class="w-full h-full flex flex-col">
+			<div class="kd-card__img w-full flex-1 overflow-auto">
+				<img
+					:src="img"
+					alt="card img"
+					class="w-full h-full object-cover object-center"
+				/>
+			</div>
 
-		<div class="kd-card__content w-full h-1/2 px-8 py-4 relative">
-			<ComponentTitle :text="title" :color="'text-navy'" />
-			<ComponentSubtitle :text="subtitle" :color="'text-navy'" />
-			<ComponentText :text="text" :color="'text-navy'" />
+			<div
+				class="kd-card__content w-full px-8 py-4 relative flex-1 overflow-auto"
+			>
+				<ComponentTitle :text="title" :color="'text-navy'" />
+				<ComponentSubtitle :text="subtitle" :color="'text-navy'" />
+				<ComponentText :text="text" :color="'text-navy'" />
 
-			<KDButton
-				v-if="linkText != ''"
-				:text="linkText"
-				:url="linkUrl"
-				:color="'navy'"
-			/>
+				<KDButton
+					v-if="linkText != ''"
+					:text="linkText"
+					:url="linkUrl"
+					:color="'navy'"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
