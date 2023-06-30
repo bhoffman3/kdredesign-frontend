@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import KDSquareSplashV2 from '../KDSquareSplashV2/KDSquareSplashV2.vue'
-import KDButton from '../Buttons/KDButton.vue'
-import ComponentTitle from '../Typography/ComponentTitle.vue'
+import KDButtonAlt from '../Buttons/KDButtonAlt.vue'
 const props = defineProps({
 	color: String,
 	img: String,
@@ -12,62 +11,76 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-.kd-angle-mask-left {
-	height: 100%;
-	clip-path: polygon(50% 40%, 0% 65%, 100% 65%);
+.kmask {
+	clip-path: polygon(0% 55%, 100% 55%, 100% 100%, 0% 100%);
 
 	@screen md {
-		clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
-	}
-
-	@screen lg {
-		clip-path: polygon(10% 50%, 100% 0%, 100% 100%);
-	}
-
-	@screen xl {
-		clip-path: polygon(40% 50%, 100% 0%, 100% 100%);
+		clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 	}
 }
 </style>
 
 <template>
-	<section class="kd-hero overflow-hidden">
+	<div class="kd-hero overflow-hidden relative" :class="color">
 		<div
-			class="w-full h-[500px] md:h-[300px] xl:h-[500px] p-2 relative"
-			:class="color"
+			class="kd-hero__in w-full h-[400px] md:h-[350px] lg:h-[400px] xl:h-[500px]"
 		>
 			<div
-				class="flex justify-end w-full h-full absolute top-0 left-[-.1%] md:left-0"
+				class="kd-hero__content w-full md:w-2/3 xl:w-1/2 h-full float-none md:float-right relative z-10"
 			>
-				<!-- mask -->
-				<div class="w-full md:w-[75%] lg:w-[50%] absolute h-full">
-					<div
-						class="w-full md:w-[40.5%] lg:w-[20.1%] kd-angle-mask-left"
-						:class="color"
-					></div>
-					<!-- /triangle -->
-					<div
-						class="w-full md:w-[60%] lg:w-[80%] h-[35.5%] md:h-full absolute bottom-0 md:top-0 right-0"
-						:class="color"
-					></div>
-					<!-- /rectangle -->
+				<div class="kmask w-full h-full" :class="color">
+					<KDSquareSplashV2
+						componentBackgroundColor="orange"
+						:squareFinalOpacity="0.25"
+					/>
 				</div>
-				<!-- /mask -->
 
-				<!-- content -->
 				<div
-					class="content absolute w-full md:w-[45%] h-full pb-8 md:pb-0 flex justify-center items-end md:items-center"
+					class="w-full md:w-[80%] h-1/2 md:h-full flex justify-center items-center absolute bottom-0 md:top-0 right-0"
 				>
-					<div class="flex flex-col flex-wrap justify-center items-center">
-						<ComponentTitle :text="title" :color="'text-white'" />
-						<div class="bg-white rounded w-full h-[3px] mb-6"></div>
-						<KDButton text="Click here" url="#" />
+					<div class="flex justify-center flex-wrap">
+						<div class="text-4xl md:text-5xl 2xl:text-6xl text-white font-bold">
+							{{ title }}
+						</div>
+						<div class="bg-white rounded w-[90%] h-[5px] mt-3 mb-4"></div>
+						<KDButtonAlt text="Click here!" url="#" size="large" />
 					</div>
 				</div>
-				<!-- /content -->
 			</div>
 
-			<img :src="img" alt="kd hero" class="w-full h-full object-cover" />
+			<div class="kd-hero__img w-full h-full absolute top-0 left-0 py-2">
+				<img :src="img" alt="kd hero" class="w-full h-full object-cover z-0" />
+			</div>
 		</div>
-	</section>
+	</div>
 </template>
+
+<!-- <template>
+	<div class="kd-hero overflow-hidden relative">
+		<div
+			class="w-full h-[400px] md:h-[350px] lg:h-[400px] xl:h-[500px] flex justify-end py-2"
+			:class="color"
+		>
+			<div class="w-full md:w-[60%] lg:w-[50%] h-full relative z-10">
+				<div class="kmask w-full h-full" :class="color">
+					<KDSquareSplashV2
+						componentBackgroundColor="orange"
+						:squareFinalOpacity="0.75"
+					/>
+				</div>
+
+				<div class="content w-full h-full bg-red-500">
+					<ComponentTitle :text="title" :color="'text-white'" />
+					<div class="bg-white rounded w-full h-[3px] mb-6"></div>
+					<KDButton text="Click here" url="#" />
+				</div>
+			</div>
+
+			<img
+				:src="img"
+				alt="kd hero"
+				class="w-full h-full object-cover absolute top-0 left-0 z-0"
+			/>
+		</div>
+	</div>
+</template> -->

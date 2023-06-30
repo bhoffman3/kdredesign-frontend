@@ -12,13 +12,17 @@ const props = defineProps({
 	text: String,
 	ctaText: String,
 	ctaLink: String,
+	marginBottom: {
+		type: Boolean,
+		default: false,
+	},
 })
 </script>
 
 <template>
-	<section class="kd-side-by-side container mx-auto my-8 px-4 lg:px-0">
+	<div class="kd-side-by-side relative" :class="marginBottom ? 'mb-8' : ''">
 		<div
-			class="flex flex-wrap overflow-hidden p-2"
+			class="flex flex-wrap overflow-hidden py-2 rounded"
 			:class="
 				color == 'navy'
 					? 'bg-navy'
@@ -56,5 +60,5 @@ const props = defineProps({
 				/>
 			</div>
 		</div>
-	</section>
+	</div>
 </template>
