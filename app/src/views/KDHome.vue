@@ -69,9 +69,5 @@ import KDSquareSplashV2 from '@/components/KDSquareSplashV2/KDSquareSplashV2.vue
 				linkUrl="#"
 			/>
 		</KDCardListing>
-
-		<div class="container mx-auto h-80 bg-navy">
-			<KDSquareSplashV2 componentBackgroundColor="navy" />
-		</div>
 	</BaseLayout>
 </template>

@@ -18,6 +18,10 @@ const props = defineProps({
 		type: String,
 		default: '',
 	},
+	squareFinalOpacity: {
+		type: Number,
+		default: 0.25,
+	},
 })
 
 const computedSquares = computed(() => {
@@ -39,7 +43,7 @@ function onBeforeEnter(el) {
 function onEnter(el, done) {
 	anime({
 		targets: el,
-		opacity: [0, 0.75],
+		opacity: [0, props.squareFinalOpacity],
 		translateY: [100, 0],
 		duration: 500,
 		easing: 'easeOutElastic',
@@ -54,9 +58,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div
-		class="kd-square-splash w-full h-full relative overflow-hidden bg-red-800"
-	>
+	<div class="kd-square-splash w-full h-full relative overflow-hidden">
 		<div
 			class="w-[110%] h-[110%] m-0 absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-hidden"
 		>
