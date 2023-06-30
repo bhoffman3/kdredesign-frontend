@@ -15,7 +15,7 @@ const props = defineProps({
 	<section
 		class="kd-container mb-12 md:mb-10 lg:mb-8"
 		:class="[
-			hasPadding ? 'px-2 md:px-0' : '',
+			hasPadding ? 'px-2 lg:px-0' : '',
 			fullWidth ? 'container-fluid' : 'container mx-auto',
 		]"
 	>

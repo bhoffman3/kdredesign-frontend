@@ -43,7 +43,7 @@ const props = defineProps({
 							{{ title }}
 						</div>
 						<div class="bg-white rounded w-[90%] h-[5px] mt-3 mb-4"></div>
-						<KDButtonAlt text="Click here!" url="#" />
+						<KDButtonAlt text="Click here!" url="#" size="large" />
 					</div>
 				</div>
 			</div>
