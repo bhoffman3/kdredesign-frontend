@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import KDSquareSplash from '../KDSquareSplash/KDSquareSplash.vue'
+import KDSquareSplashV2 from '../KDSquareSplashV2/KDSquareSplashV2.vue'
 import KDButton from '../Buttons/KDButton.vue'
 import ComponentTitle from '../Typography/ComponentTitle.vue'
 const props = defineProps({
@@ -49,15 +49,7 @@ const props = defineProps({
 					<div
 						class="w-full md:w-[60%] lg:w-[80%] h-[35.5%] md:h-full absolute bottom-0 md:top-0 right-0"
 						:class="color"
-					>
-						<!--<KDSquareSplash :num-squares-floor="15" :num-squares-ceiling="25" />-->
-						<!--
-							Issues with KDSquareSplash currently:
-							- Hard to read content when there are squares behind it
-							- On mobile we need to limit the amount of squares because the container is smaller
-							- Limit the amount of larger squares compared to smaller ones???
-						-->
-					</div>
+					></div>
 					<!-- /rectangle -->
 				</div>
 				<!-- /mask -->
