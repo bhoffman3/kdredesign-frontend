@@ -2,6 +2,7 @@
 import KDSquareSplashV2 from '../KDSquareSplashV2/KDSquareSplashV2.vue'
 import KDButton from '../Buttons/KDButton.vue'
 import ComponentTitle from '../Typography/ComponentTitle.vue'
+import KMask from '../SVG/KMask.vue'
 const props = defineProps({
 	color: String,
 	img: String,
@@ -12,20 +13,11 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-.kd-angle-mask-left {
-	height: 100%;
-	clip-path: polygon(50% 40%, 0% 65%, 100% 65%);
+.kmask {
+	clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 55% 100%);
 
 	@screen md {
-		clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
-	}
-
-	@screen lg {
-		clip-path: polygon(10% 50%, 100% 0%, 100% 100%);
-	}
-
-	@screen xl {
-		clip-path: polygon(40% 50%, 100% 0%, 100% 100%);
+		clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 	}
 }
 </style>
@@ -33,24 +25,13 @@ const props = defineProps({
 <template>
 	<section class="kd-hero overflow-hidden">
 		<div
-			class="w-full h-[500px] md:h-[300px] xl:h-[500px] p-2 relative"
+			class="w-full h-[400px] md:h-[350px] lg:h-[400px] xl:h-[500px] py-2 relative"
 			:class="color"
 		>
-			<div
-				class="flex justify-end w-full h-full absolute top-0 left-[-.1%] md:left-0"
-			>
+			<div class="flex justify-end w-full h-full absolute top-0 left-0">
 				<!-- mask -->
-				<div class="w-full md:w-[75%] lg:w-[50%] absolute h-full">
-					<div
-						class="w-full md:w-[40.5%] lg:w-[20.1%] kd-angle-mask-left"
-						:class="color"
-					></div>
-					<!-- /triangle -->
-					<div
-						class="w-full md:w-[60%] lg:w-[80%] h-[35.5%] md:h-full absolute bottom-0 md:top-0 right-0"
-						:class="color"
-					></div>
-					<!-- /rectangle -->
+				<div class="w-full md:w-[60%] lg:w-[50%] h-full rotate-90 md:rotate-0">
+					<div class="w-full h-full kmask" :class="color"></div>
 				</div>
 				<!-- /mask -->
 
