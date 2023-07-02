@@ -5,7 +5,7 @@ import KDSideBySide from '@/components/KDSideBySide/KDSideBySide.vue'
 import KDCard from '@/components/KDCards/KDCard.vue'
 import KDCardListing from '@/components/KDCards/KDCardListing.vue'
 import KDContainer from '@/components/Utility/KDContainer.vue'
-import KDSquareSplashV2 from '@/components/KDSquareSplashV2/KDSquareSplashV2.vue'
+import KDCTA from '@/components/KDCTA/KDCTA.vue'
 </script>
 
 <template>
@@ -79,6 +79,15 @@ import KDSquareSplashV2 from '@/components/KDSquareSplashV2/KDSquareSplashV2.vue
 					linkUrl="#"
 				/>
 			</KDCardListing>
+		</KDContainer>
+
+		<KDContainer>
+			<KDCTA
+				title="Lorem Ipsum"
+				text="Aliqua esse cupidatat sunt dolore mollit non sint aliqua consectetur ipsum amet officia aliquip. Excepteur ad amet cupidatat sunt proident ad adipisicing."
+				linkText="Click here"
+				linkUrl="#"
+			/>
 		</KDContainer>
 	</BaseLayout>
 </template>
