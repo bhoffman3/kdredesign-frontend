@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import KDLogo from '../Logos/KDLogo.vue'
 import KDLogoSmall from '../Logos/KDLogoSmall.vue'
+import KDButtonAlt from '../Buttons/KDButtonAlt.vue'
 </script>
 
 <template>
@@ -80,6 +81,8 @@ import KDLogoSmall from '../Logos/KDLogoSmall.vue'
 				class="hidden lg:inline-block py-2 px-6 bg-navy text-sm text-white font-bold rounded-xl transition duration-200"
 				>Contact Us</a
 			>
+
+			<!-- <KDButtonAlt text="Contact Us" url="#" theme="navy" /> ** I don't know if site button works well in header -->
 		</nav>
 		<!-- /desktop nav -->
 

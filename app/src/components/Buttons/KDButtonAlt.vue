@@ -48,6 +48,23 @@ onMounted(() => {
 
 <style lang="scss">
 .kd-btn-alt {
+	&.orange {
+		.out {
+			@apply bg-white text-white;
+		}
+		.in {
+			@apply bg-orange;
+		}
+	}
+	&.navy {
+		.out {
+			@apply bg-navy text-navy;
+		}
+		.in {
+			@apply bg-white;
+		}
+	}
+
 	&.small {
 	}
 	&.base {
@@ -75,12 +92,10 @@ onMounted(() => {
 			:href="url"
 			:target="newTab ? '_blank' : ''"
 			class="kd-btn-alt relative overflow-hidden inline-block"
-			:class="size"
+			:class="[size, theme]"
 		>
-			<div
-				class="out bg-navy text-navy font-bold uppercase tracking-wider rounded-lg shadow-lg"
-			>
-				<div class="in bg-white rounded">{{ text }}</div>
+			<div class="out font-bold uppercase tracking-wider rounded-lg shadow-lg">
+				<div class="in rounded">{{ text }}</div>
 			</div>
 		</a>
 	</Transition>
