@@ -21,7 +21,7 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="kd-cta relative overflow-hidden rounded-xl">
+	<div class="kd-cta relative overflow-hidden rounded-xl shadow-lg">
 		<div
 			class="kd-cta__bg w-full h-full bg-sky absolute top-0 left-0 z-0"
 		></div>
@@ -64,7 +64,7 @@ const props = defineProps({
 
 			<div class="kd-cta__right w-full lg:w-[20%] flex flex-wrap px-4 lg:px-0">
 				<div
-					class="w-[75%] lg:w-[90%] h-28 lg:h-36 bg-navy rounded-xl mb-[-5%] lg:mt-[-5%] order-2 lg:order-1"
+					class="w-[75%] lg:w-[90%] h-28 lg:h-36 bg-navy rounded-xl mb-[-5%] lg:mt-[-5%] ml-16 order-2 lg:order-1 opacity-25 lg:opacity-100"
 				></div>
 				<div v-if="linkText != ''" class="w-full order-1 md:order-2">
 					<KDButtonAlt :text="linkText" :url="linkUrl" size="large" />

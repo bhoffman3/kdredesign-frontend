@@ -6,6 +6,7 @@ import KDCard from '@/components/KDCards/KDCard.vue'
 import KDCardListing from '@/components/KDCards/KDCardListing.vue'
 import KDContainer from '@/components/Utility/KDContainer.vue'
 import KDCTA from '@/components/KDCTA/KDCTA.vue'
+import KDTestimonial from '@/components/KDTestimonial/KDTestimonial.vue'
 </script>
 
 <template>
@@ -13,7 +14,15 @@ import KDCTA from '@/components/KDCTA/KDCTA.vue'
 		<!-- hero -->
 		<KDContainer :hasPadding="false" :fullWidth="true">
 			<KDHero
-				color="bg-orange"
+				theme="orange"
+				img="https://picsum.photos/seed/avocadoguy/1920/1080"
+				title="Lorem Ipsum"
+			/>
+		</KDContainer>
+
+		<KDContainer :hasPadding="false" :fullWidth="true">
+			<KDHero
+				theme="navy"
 				img="https://picsum.photos/seed/avocadoguy/1920/1080"
 				title="Lorem Ipsum"
 			/>
@@ -81,12 +90,28 @@ import KDCTA from '@/components/KDCTA/KDCTA.vue'
 			</KDCardListing>
 		</KDContainer>
 
+		<!-- CTA -->
 		<KDContainer>
 			<KDCTA
 				title="Lorem Ipsum"
 				text="Aliqua esse cupidatat sunt dolore mollit non sint aliqua consectetur ipsum amet officia aliquip. Excepteur ad amet cupidatat sunt proident ad adipisicing."
 				linkText="Click here"
 				linkUrl="#"
+			/>
+		</KDContainer>
+
+		<!-- testimonial  -->
+		<KDContainer>
+			<KDTestimonial
+				quote="Sunt nulla duis veniam fugiat dolore culpa in nostrud exercitation cupidatat. Laboris labore exercitation irure minim quis adipisicing anim ullamco. Ea tempor occaecat officia minim consequat cillum excepteur. Non non sit commodo ea culpa magna incididunt est. Officia anim culpa nisi veniam excepteur laboris exercitation dolor incididunt deserunt eiusmod ad. Elit tempor quis aliquip non id minim cupidatat officia in nisi. Enim sint do magna Lorem dolor."
+				quotee="Robert F. Chairman ABC Corp"
+				theme="orange"
+			/>
+
+			<KDTestimonial
+				quote="Sunt nulla duis veniam fugiat dolore culpa in nostrud exercitation cupidatat. Laboris labore exercitation irure minim quis adipisicing anim ullamco. Ea tempor occaecat officia minim consequat cillum excepteur. Non non sit commodo ea culpa magna incididunt est. Officia anim culpa nisi veniam excepteur laboris exercitation dolor incididunt deserunt eiusmod ad. Elit tempor quis aliquip non id minim cupidatat officia in nisi. Enim sint do magna Lorem dolor."
+				quotee="Robert F. Chairman ABC Corp"
+				theme="navy"
 			/>
 		</KDContainer>
 	</BaseLayout>
