@@ -7,6 +7,7 @@ import KDCardListing from '@/components/KDCards/KDCardListing.vue'
 import KDContainer from '@/components/Utility/KDContainer.vue'
 import KDCTA from '@/components/KDCTA/KDCTA.vue'
 import KDTestimonial from '@/components/KDTestimonial/KDTestimonial.vue'
+import FormUI from '@/components/FormUI/FormUI.vue'
 </script>
 
 <template>
@@ -113,6 +114,9 @@ import KDTestimonial from '@/components/KDTestimonial/KDTestimonial.vue'
 				quotee="Robert F. Chairman ABC Corp"
 				theme="navy"
 			/>
+		</KDContainer>
+		<KDContainer>
+			<FormUI />
 		</KDContainer>
 	</BaseLayout>
 </template>
