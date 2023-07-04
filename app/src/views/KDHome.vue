@@ -8,6 +8,8 @@ import KDContainer from '@/components/Utility/KDContainer.vue'
 import KDCTA from '@/components/KDCTA/KDCTA.vue'
 import KDTestimonial from '@/components/KDTestimonial/KDTestimonial.vue'
 import FormUI from '@/components/FormUI/FormUI.vue'
+import KDCarousel from '@/components/KDCarousel/KDCarousel.vue'
+import KDCarouselSlide from '@/components/KDCarousel/KDCarouselSlide.vue'
 </script>
 
 <template>
@@ -117,6 +119,24 @@ import FormUI from '@/components/FormUI/FormUI.vue'
 		</KDContainer>
 		<KDContainer>
 			<FormUI />
+		</KDContainer>
+		<KDContainer>
+			<KDCarousel
+				title="Lorem Ipsum"
+				text="Ipsum consectetur veniam pariatur anim labore sit ullamco sint officia."
+				linkText="Click here"
+				squareSplash="true"
+			>
+				<KDCarouselSlide
+					title="Lorem"
+					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+					image="https://picsum.photos/id/684/600/400"
+					linkText="Click here"
+					linkUrl="#"
+				/>
+				<KDCarouselSlide title="Lorem" color="orange" />
+				<KDCarouselSlide title="Lorem" color="yellow" />
+			</KDCarousel>
 		</KDContainer>
 	</BaseLayout>
 </template>
