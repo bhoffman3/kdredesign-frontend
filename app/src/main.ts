@@ -10,6 +10,8 @@ import $ from 'jquery'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import {
+   faAngleLeft,
+   faAngleRight,
    faHouse,
    faQuoteLeft,
    faQuoteRight,
@@ -23,7 +25,7 @@ import {
    faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faHouse, faUser, faQuoteLeft, faQuoteRight, faFacebook, faInstagram, faLinkedin, faTwitter)
+library.add(faHouse, faUser, faQuoteLeft, faQuoteRight, faAngleLeft, faAngleRight, faFacebook, faInstagram, faLinkedin, faTwitter)
 
 const app = createApp(App)
    .component('font-awesome-icon', FontAwesomeIcon)

@@ -125,7 +125,7 @@ import KDCarouselSlide from '@/components/KDCarousel/KDCarouselSlide.vue'
 				title="Lorem Ipsum"
 				text="Ipsum consectetur veniam pariatur anim labore sit ullamco sint officia."
 				linkText="Click here"
-				squareSplash="true"
+				:squareSplash="true"
 			>
 				<KDCarouselSlide
 					title="Lorem"
