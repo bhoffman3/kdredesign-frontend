@@ -22,6 +22,14 @@ const props = defineProps({
 		type: Number,
 		default: 0.25,
 	},
+	xGap: {
+		type: String,
+		default: '1rem',
+	},
+	yGap: {
+		type: String,
+		default: '1rem',
+	},
 })
 
 const computedSquares = computed(() => {
@@ -67,6 +75,7 @@ onMounted(() => {
 				name="squares"
 				tag="div"
 				class="flex flex-wrap justify-around gap-x-10 gap-y-10"
+				:class="['gap-x-[' + xGap + ']', 'gap-y-[' + yGap + ']']"
 				:css="false"
 				@before-appear="onBeforeEnter"
 				@appear="onEnter"
@@ -80,7 +89,7 @@ onMounted(() => {
 					:data-align="square.align"
 					:data-delay="square.delay"
 					:data-gap="square.xgap"
-					class="rounded shadow flex-grow"
+					class="rounded shadow"
 				></div>
 			</TransitionGroup>
 		</div>
