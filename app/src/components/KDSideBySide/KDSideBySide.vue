@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import KDButton from '../Buttons/KDButton.vue'
-import ComponentTitle from '../Typography/ComponentTitle.vue'
-import ComponentSubtitle from '../Typography/ComponentSubtitle.vue'
-import ComponentText from '../Typography/ComponentText.vue'
+import KDButtonAlt from '../Buttons/KDButtonAlt.vue'
+import KDSquareSplashV2 from '../KDSquareSplashV2/KDSquareSplashV2.vue'
 const props = defineProps({
 	contentSide: String,
-	color: String,
+	theme: {
+		type: String,
+		default: '',
+	},
 	img: String,
 	title: String,
 	subtitle: String,
@@ -21,42 +22,50 @@ const props = defineProps({
 
 <template>
 	<div class="kd-side-by-side relative" :class="marginBottom ? 'mb-8' : ''">
-		<div
-			class="flex flex-wrap overflow-hidden py-2 rounded"
-			:class="
-				color == 'navy'
-					? 'bg-navy'
-					: color == 'orange'
-					? 'bg-orange'
-					: 'bg-navy'
-			"
-		>
+		<div class="flex flex-wrap lg:flex-nowrap gap-1 md:gap-3">
 			<div
-				class="kd-side-by-side__img w-full md:w-1/2 h-[15em] md:h-auto relative"
-				:class="contentSide == 'right' ? 'order-1' : 'order-2'"
+				class="content w-full lg:w-[60%] bg-orange flex flex-wrap justify-center items-end order-2 lg:order-1 rounded-xl relative overflow-hidden"
 			>
-				<img
-					class="object-cover object-center w-full h-full absolute"
-					:src="img"
-					alt="side by side img"
-				/>
+				<div class="w-full lg:w-3/4 p-6 lg:p-0 lg:pt-16 self-start">
+					<div
+						class="text-lg lg:text-xl text-white uppercase ml-1 tracking-wide"
+					>
+						{{ subtitle }}
+					</div>
+					<div class="text-4xl lg:text-6xl text-white tracking-wider">
+						{{ title }}
+					</div>
+					<p
+						class="text-white text-base lg:text-lg mt-4 lg:mt-6 tracking-wide leading-7"
+					>
+						{{ text }}
+					</p>
+					<KDButtonAlt
+						v-if="ctaText != ''"
+						:text="ctaText"
+						:url="ctaLink"
+						size="large"
+						class="mt-6"
+					/>
+				</div>
+				<div class="relative bottom-0 left-0 w-full h-20 bg-navy">
+					<KDSquareSplashV2
+						componentBackgroundColor="navy"
+						:squareFinalOpacity="0.7"
+						xGap="1rem"
+						yGap="1rem"
+					/>
+				</div>
 			</div>
 
 			<div
-				class="kd-side-by-side__content w-full md:w-1/2 h-auto px-6 py-8 xl:px-24 xl:py-36"
-				:class="contentSide == 'right' ? 'order-2' : 'order-1'"
+				class="image w-full lg:w-[40%] h-64 md:h-96 lg:h-auto order-1 lg:order-2 rounded-lg aspect-square overflow-hidden"
 			>
-				<ComponentTitle :text="title" :color="'text-white'" />
-				<ComponentSubtitle :text="subtitle" :color="'text-white'" />
-				<ComponentText :text="text" :color="'text-white'" />
-
-				<KDButton
-					v-if="ctaText != ''"
-					size="small"
-					:color="color == 'navy' ? 'yellow' : color == 'orange' ? 'navy' : ''"
-					:text="ctaText"
-					:url="ctaLink"
-					:newTab="false"
+				<img
+					v-if="img != ''"
+					:src="img"
+					alt="feature img"
+					class="w-full h-full object-cover"
 				/>
 			</div>
 		</div>
