@@ -24,9 +24,9 @@ const props = defineProps({
 	<div class="kd-side-by-side relative" :class="marginBottom ? 'mb-8' : ''">
 		<div class="flex flex-wrap lg:flex-nowrap gap-1 md:gap-3">
 			<div
-				class="content w-full lg:w-[60%] p-6 md:p-0 md:pt-16 bg-orange flex flex-wrap justify-center items-top order-2 lg:order-1 rounded-xl relative overflow-hidden"
+				class="content w-full lg:w-[60%] bg-orange flex flex-wrap justify-center items-end order-2 lg:order-1 rounded-xl relative overflow-hidden"
 			>
-				<div class="w-full lg:w-3/4">
+				<div class="w-full lg:w-3/4 p-6 lg:p-0 lg:pt-16 self-start">
 					<div
 						class="text-lg lg:text-xl text-white uppercase ml-1 tracking-wide"
 					>
@@ -48,7 +48,7 @@ const props = defineProps({
 						class="mt-6"
 					/>
 				</div>
-				<div class="absolute bottom-0 left-0 w-full h-36 bg-navy">
+				<div class="relative bottom-0 left-0 w-full h-20 bg-navy">
 					<KDSquareSplashV2
 						componentBackgroundColor="navy"
 						:squareFinalOpacity="0.7"
@@ -59,7 +59,7 @@ const props = defineProps({
 			</div>
 
 			<div
-				class="image w-full lg:w-[40%] order-1 lg:order-2 rounded-lg aspect-square overflow-hidden"
+				class="image w-full lg:w-[40%] h-64 md:h-96 lg:h-auto order-1 lg:order-2 rounded-lg aspect-square overflow-hidden"
 			>
 				<img
 					v-if="img != ''"
